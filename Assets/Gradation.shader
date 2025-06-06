@@ -50,4 +50,3 @@ Shader "Gradation/Gradation" {
         }
     }
 }
-‘‚«Š·‚¦‚éêŠ

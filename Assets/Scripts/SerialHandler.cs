@@ -9,7 +9,7 @@ public class SerialHandler : MonoBehaviour
     public delegate void SerialDataReceivedEventHandler(string message);
     public event SerialDataReceivedEventHandler OnDataReceived;
 
-    public string portName = "COM3";
+    public string portName = "COM4";
     public int baudRate = 9600;
 
     private SerialPort serialPort_;
@@ -38,12 +38,12 @@ public class SerialHandler : MonoBehaviour
             OnDataReceived(message_);
             Debug.Log(message_);
         }
-        if (Shot.Getblinkled())
+        if (Shot.Getblinkled()) //LED“_“”‚·‚é
         {
             serialPort_.Write("H");
-            Invoke("Resetled", 3);
+            Invoke("Resetled", 3); //3•bŠÔ“_“”‚µ‚½‚çÁ“”
         }
-        else if (!Shot.Getblinkled())
+        else if (!Shot.Getblinkled()) //LED“_“”‚µ‚È‚¢
         {
             serialPort_.Write("L");
         }
@@ -113,7 +113,7 @@ public class SerialHandler : MonoBehaviour
         }
     }
 
-    public void Resetled()
+    public void Resetled() //LED‚ğÁ“”‚·‚é
     {
         Shot.Resetled();
     }

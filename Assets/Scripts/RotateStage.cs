@@ -6,7 +6,7 @@ public class RotateStage : MonoBehaviour
 {
     public SerialHandler serialHandler;
     public GameObject stage;
-    bool swpressed;
+    bool swpressed; //スイッチが押されたか
 
     private List<Vector3> angleCache = new List<Vector3>();
     public int angleCacheNum = 10;
@@ -49,7 +49,7 @@ public class RotateStage : MonoBehaviour
 
     void OnDataReceived(string message)
     {
-        if(string.Equals(message, "s"))
+        if(string.Equals(message, "s")) //スイッチが押された時
         {
             Shot.Setswpressed();
             return;

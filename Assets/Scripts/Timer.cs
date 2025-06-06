@@ -44,7 +44,7 @@ public class Timer : MonoBehaviour
         }
         //　一旦トータルの制限時間を計測；
         totalTime = minute * 60 + seconds;
-        cntTime = totalTime;
+        cntTime = totalTime; //deltaTimeを引く前の時間
         totalTime -= Time.deltaTime;
 
         //　再設定
@@ -55,14 +55,14 @@ public class Timer : MonoBehaviour
         if ((int)seconds != (int)oldSeconds)
         {
             timerText.text = minute.ToString("00") + ":" + ((int)seconds).ToString("00");
-            if (totalTime < 11)
+            if (totalTime < 11) //残り10秒で赤く表示
             {
                 timerText.color = Color.red;
             }
         }
         oldSeconds = seconds;
 
-        if(cntTime>=cntNum && totalTime<cntNum && cntNum>0)
+        if(cntTime>=cntNum && totalTime<cntNum && cntNum>0) //残り10秒になったら1秒ごとに音を鳴らす(カウントダウン)
         {
             audioSource.PlayOneShot(countSE);
             cntNum--;

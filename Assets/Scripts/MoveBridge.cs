@@ -7,7 +7,7 @@ public class MoveBridge : MonoBehaviour
     public float speed = 0.03f;
     float right_limit = 6.5f;
     float left_limit = -9.0f;
-    bool move_R = true;
+    bool move_R = true; //‰E‚É“®‚¢‚Ä‚¢‚é‚©
     // Start is called before the first frame update
     void Start()
     {

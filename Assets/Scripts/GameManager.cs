@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        point = Shot.Getpoint();
+        point = Shot.Getpoint(); //現在のポイントを取得
         scoreText.text = "Your score: " + point + " pt"; 
 
         // GameOverテキストを呼び出す
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public void GameRestart()
     {
-        Shot.Resetpoint();
+        Shot.Resetpoint(); //ポイントを0にリセット
         // 現在のシーンを取得してロードする
         Scene activeScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(activeScene.name);
